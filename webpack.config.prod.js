@@ -15,7 +15,7 @@ module.exports = {
   cache: false,
   debug: false,
   entry: {
-    web:'./web/index'
+    web: './web/index'
   },
   output: {
     path: path.join(__dirname, 'public', 'assets'),
@@ -57,7 +57,7 @@ module.exports = {
     includePaths: [path.join(__dirname, 'web/scss')]
   },
   postcss: function () {
-    return [autoprefixer({ browsers: ['last 2 Chrome versions'] })]
+    return [autoprefixer({ browsers: ['last 2 Chrome versions'] })];
   },
   externals: {
     'react': 'React',

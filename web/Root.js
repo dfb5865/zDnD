@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { Router } from 'react-router';
 import routes from './routes';
 
-export default class Root extends Component {
+class Root extends Component {
    render() {
     const { store, history } = this.props;
     return (
@@ -18,3 +18,10 @@ export default class Root extends Component {
     );
   }
 }
+
+Root.propTypes = {
+    store: React.PropTypes.object,
+    history: React.PropTypes.object
+};
+
+export default Root;

@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import styles from './App.scss';
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
       <div className={styles.container}>
-        {this.props.children}
+        <h1>Hello World! This is thann.</h1>
       </div>
     );
   }
 }
+
+export default App;

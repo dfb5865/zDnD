@@ -15,7 +15,7 @@ module.exports = {
   cache: true,
   debug: true,
   entry: {
-    web:[
+    web: [
       'webpack-dev-server/client?http://localhost:3000',
       'webpack/hot/only-dev-server',
       'react-hot-loader/patch',
@@ -53,7 +53,7 @@ module.exports = {
     includePaths: [path.join(__dirname, 'web/scss')]
   },
   postcss: function () {
-    return [autoprefixer({ browsers: ['last 2 Chrome versions'] })]
+    return [autoprefixer({ browsers: ['last 2 Chrome versions'] })];
   },
   externals: {
     'react': 'React',
