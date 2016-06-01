@@ -3,7 +3,9 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import styles from './Party.scss';
 
-import PartyMember from '../../components/PartyMember';
+import PartyHeader from '../../components/PartyHeader';
+import PartyList from '../../components/PartyList';
+import SelectedPartyMember from '../../components/SelectedPartyMember';
 
 import * as actionCreators from '../../actions/party';
 
@@ -14,23 +16,12 @@ export class Party extends React.Component {
     }
 
     render() {
-        if(this.props.partyData.members === undefined){
-            return (<div>Loading...</div>);
-        }
-
-        var rows = [];
-        var lastCategory = null;
-        this.props.partyData.members.forEach(function (member) {
-          rows.push(<PartyMember key={member.name} member={member} />);
-        });
-
         return (
             <div>
-                <div>
-                    {this.props.partyData.partyName}
-                </div>
-                <div>
-                    {rows}
+                <PartyHeader partyName={this.props.partyName} />
+                <div className={styles.content}>
+                    <PartyList partyMembers={this.props.partyMembers} />
+                    <SelectedPartyMember selectedPartyMember={this.props.selectedPartyMember} />
                 </div>
             </div>
         );
@@ -41,26 +32,27 @@ Party.propTypes = {
     actions: React.PropTypes.shape({
         loadPartyData: React.PropTypes.func
     }),
-    partyId: React.PropTypes.string,
-    partyData: React.PropTypes.shape({
-        partyName: React.PropTypes.string,
-        members: React.PropTypes.arrayOf(
-            React.PropTypes.shape({
-                'name': React.PropTypes.string,
-                'race': React.PropTypes.string,
-                'subRace': React.PropTypes.string,
-                'class': React.PropTypes.string,
-                'health': React.PropTypes.number,
-                'armorCLass': React.PropTypes.number
-            })
-        ),
-    })
+    partyId: React.PropTypes.number,
+    partyName: React.PropTypes.string,
+    partyMembers: React.PropTypes.arrayOf(
+        React.PropTypes.shape({
+            'name': React.PropTypes.string,
+            'race': React.PropTypes.string,
+            'subRace': React.PropTypes.string,
+            'class': React.PropTypes.string,
+            'health': React.PropTypes.number,
+            'armorCLass': React.PropTypes.number
+        })
+    ),
+    selectedPartyMember: React.PropTypes.object
 };
 
 function mapStateToProps(state) {
     return {
-        partyId: state.app.partyId,
-        partyData: state.party.partyData
+        partyId: state.party.partyId,
+        partyName: state.party.partyName,
+        partyMembers: state.party.partyMembers,
+        selectedPartyMember: state.party.selectedPartyMember
     };
 }
 

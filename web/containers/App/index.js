@@ -23,7 +23,7 @@ class App extends Component {
 	        	<div className={styles.partyNameContainer}>
 	        		<div className={styles.partyNameForm}>
 	        			<div className={styles.brand}>👑thann</div>
-	        			<span className={styles.partyNameLabel}>Enter your party name:</span>
+	        			<span className={styles.partyNameLabel}>Enter your party's name:</span>
 	        			<input className={styles.partyNameInput} id="party-name" type="text" onKeyPress={e => this.handleInput(e)}/>
 	        		</div>
 	        	</div>
