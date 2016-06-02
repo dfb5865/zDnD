@@ -17,7 +17,7 @@ import styles from './SelectedCharacter.scss';
         return (
             <div className={styles.container}>
             	<div style={{width: 500 + 'px'}}>
-            		{JSON.stringify(this.props.character)}
+            		{JSON.stringify(this.props.character, null, 2)}
             	</div>
             </div>
         );
