@@ -1,4 +1,5 @@
-import { LOAD_PARTY_DATA } from '../actions/party';
+import { LOAD_PARTY_DATA,
+        SET_SELECTED_PARTY_MEMBER } from '../actions/party';
 
 const initialState = {
     partyId: 0,
@@ -259,13 +260,18 @@ let mockState = {
     partyId: 1,
     partyName: 'The Three Amigos',
     partyMembers: partyMembers,
-    SelectedPartyMember: partyMembers[0]
+    selectedPartyMember: partyMembers[0]
 };
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
         case LOAD_PARTY_DATA:
             return mockState;
+        case SET_SELECTED_PARTY_MEMBER:
+            return {
+                ...mockState,
+                selectedPartyMember: action.selectedPartyMember
+            };
         default:
             return state;
     }

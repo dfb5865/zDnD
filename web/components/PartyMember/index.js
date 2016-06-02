@@ -2,9 +2,18 @@ import React, { Component, PropTypes } from 'react';
 import styles from './PartyMember.scss';
 
 class PartyMember extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        this.props.setSelectedPartyMember(this.props.member);
+    }
+
     render() {
         return (
-            <div className={styles.container}>
+            <div className={styles.container} onClick={this.handleClick}>
                 <div className={styles.nameContainer}>
                     <span className={styles.name}> {this.props.member.name} </span>
                     <span className={styles.race}> {this.props.member.race} </span>
@@ -36,7 +45,8 @@ PartyMember.propTypes = {
         'currentHealth': React.PropTypes.number,
         'totalHealth': React.PropTypes.number,
         'armorClass': React.PropTypes.number,
-    })
+    }),
+    setSelectedPartyMember: React.PropTypes.func
 };
 
 export default PartyMember;

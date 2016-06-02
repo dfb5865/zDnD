@@ -20,8 +20,8 @@ export class Party extends React.Component {
             <div>
                 <PartyHeader partyName={this.props.partyName} />
                 <div className={styles.content}>
-                    <PartyList partyMembers={this.props.partyMembers} />
-                    <SelectedPartyMember selectedPartyMember={this.props.selectedPartyMember} />
+                    <PartyList setSelectedPartyMember={this.props.actions.setSelectedPartyMember} partyMembers={this.props.partyMembers} />
+                    <SelectedPartyMember member={this.props.selectedPartyMember} />
                 </div>
             </div>
         );
@@ -30,7 +30,8 @@ export class Party extends React.Component {
 
 Party.propTypes = {
     actions: React.PropTypes.shape({
-        loadPartyData: React.PropTypes.func
+        loadPartyData: React.PropTypes.func,
+        setSelectedPartyMember: React.PropTypes.func,
     }),
     partyId: React.PropTypes.number,
     partyName: React.PropTypes.string,

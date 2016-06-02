@@ -7,8 +7,8 @@ import PartyMember from '../../components/PartyMember';
     render() {
         var rows = [];
         this.props.partyMembers.forEach(function (member) {
-            rows.push(<PartyMember key={member.name} member={member} />);
-        });
+            rows.push(<PartyMember key={member.name} member={member} setSelectedPartyMember={this.props.setSelectedPartyMember} />);
+        }.bind(this));
 
         return (
             <div className={styles.container}>
@@ -28,7 +28,8 @@ PartyList.propTypes = {
             'health': React.PropTypes.number,
             'armorCLass': React.PropTypes.number
         })
-    )
+    ),
+    setSelectedPartyMember: React.PropTypes.func
 };
 
 export default PartyList;
