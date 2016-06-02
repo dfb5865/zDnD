@@ -1,0 +1,21 @@
+.container {
+	height: 100px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #000;
+    padding: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container:hover {
+	background: #ddd;
+}
+
+.nameContainer {
+	margin: auto;
+}
+
+.name {
+	font-size: 28px;
+}

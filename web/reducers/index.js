@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import { routerReducer as routing } from 'react-router-redux';
-import app from './app.js';
 import party from './party.js';
+import search from './search.js';
 
 const rootReducer = combineReducers({
-	app,
+	search,
 	party,
   	routing
 });

@@ -3,25 +3,24 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import styles from './Party.scss';
 
-import PartyHeader from '../../components/PartyHeader';
+import Header from '../../components/Header';
 import PartyList from '../../components/PartyList';
-import SelectedPartyMember from '../../components/SelectedPartyMember';
+import SelectedCharacter from '../../components/SelectedCharacter';
 
 import * as actionCreators from '../../actions/party';
 
 export class Party extends React.Component {
-    constructor(props) {
-        super(props);
-        this.props.actions.loadPartyData(this.props.partyId);
-    }
-
     render() {
         return (
             <div>
-                <PartyHeader partyName={this.props.partyName} />
+                <Header />
                 <div className={styles.content}>
-                    <PartyList partyMembers={this.props.partyMembers} />
-                    <SelectedPartyMember selectedPartyMember={this.props.selectedPartyMember} />
+                    <PartyList
+                        characterSearch={this.props.actions.characterSearch}
+                        setSelectedCharacter={this.props.actions.setSelectedCharacter}
+                        characters={this.props.characters}
+                        />
+                    <SelectedCharacter character={this.props.selectedCharacter} />
                 </div>
             </div>
         );
@@ -30,29 +29,17 @@ export class Party extends React.Component {
 
 Party.propTypes = {
     actions: React.PropTypes.shape({
-        loadPartyData: React.PropTypes.func
+        characterSearch: React.PropTypes.func,
+        setSelectedCharacter: React.PropTypes.func,
     }),
-    partyId: React.PropTypes.number,
-    partyName: React.PropTypes.string,
-    partyMembers: React.PropTypes.arrayOf(
-        React.PropTypes.shape({
-            'name': React.PropTypes.string,
-            'race': React.PropTypes.string,
-            'subRace': React.PropTypes.string,
-            'class': React.PropTypes.string,
-            'health': React.PropTypes.number,
-            'armorCLass': React.PropTypes.number
-        })
-    ),
-    selectedPartyMember: React.PropTypes.object
+    characters: React.PropTypes.arrayOf(React.PropTypes.object),
+    selectedCharacter: React.PropTypes.object
 };
 
 function mapStateToProps(state) {
     return {
-        partyId: state.party.partyId,
-        partyName: state.party.partyName,
-        partyMembers: state.party.partyMembers,
-        selectedPartyMember: state.party.selectedPartyMember
+        characters: state.party.characters,
+        selectedCharacter: state.party.selectedCharacter
     };
 }
 
