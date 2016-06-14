@@ -22,7 +22,7 @@ class PartyMemberTile extends React.Component {
                 <div className={styles.statusContainer}>
                     <div className={styles.health}>
                         <span className={styles.stat}>
-                            {this.props.character.currentHealth} / {this.props.character.totalHealth}
+                            {this.props.character.currentHitPoints} / {this.props.character.maxHitPoints}
                         </span> Health
                     </div>
                     <div className={styles.armorClass}>

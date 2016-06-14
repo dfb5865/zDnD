@@ -16,88 +16,96 @@ import styles from './SelectedCharacter.scss';
 
         return (
             <div className={styles.container}>
-                <div className={styles.topContainer}>
-                    <div className={styles.characterName}></div>
-                    <div className={styles.classAndLevel}>
-                        <div className={styles.classAndLevel_topContainer}>
-                            <div className={styles.class}></div>
-                            <div className={styles.level}></div>
-                            <div className={styles.playerName}></div>
+                <div className={styles.nameContainer}>
+                    <div className={styles.characterName}>Character Name: {this.props.character.name}</div>
+                    <div className={styles.atAGlanceContainer}>
+                        <div className={styles.classLine}>
+                            <div className={styles.class}>Class: {this.props.character.class} ({this.props.character.subClass})</div>
+                            <div className={styles.level}>Level: {this.props.character.level}</div>
+                            <div className={styles.playerName}>Player Name: {this.props.character.playerName}</div>
                         </div>
-                        <div className={styles.classAndLevel_bottomContainer}>
-                            <div className={styles.race}></div>
-                            <div className={styles.alignment}></div>
-                            <div className={styles.experience}></div>
+                        <div className={styles.raceLine}>
+                            <div className={styles.race}>Race: {this.props.character.race} ({this.props.character.subRace})</div>
+                            <div className={styles.alignment}>Alignment: {this.props.character.alignment}</div>
+                            <div className={styles.experience}>Experience: {this.props.character.experience}</div>
                         </div>
                     </div>
                 </div>
 
-                <div className={styles.leftContainer}>
-                    <div className={styles.proficiencyBonus}></div>
-                    <div className={styles.inspiration}></div>
-                    <div className={styles.strength}>
-                        <div className={styles.strengthNumber}></div>
-                        <div className={styles.strengthBonuses}></div>
-                    </div>
-                    <div className={styles.dexterity}>
-                        <div className={styles.dexterityNumber}></div>
-                        <div className={styles.dexterityBonuses}></div>
+                <div className={styles.bottomContainer}>
+                    <div className={styles.attributesContainer}>
+                        <div className={styles.proficiencyBonus}>Proficiency Bonus: {this.props.character.proficiencyBonus}</div>
+                        <div className={styles.strength}>
+                            <div className={styles.strengthNumber}>Strength: {this.props.character.strength}</div>
+                            <div className={styles.strengthBonuses}></div>
+                        </div>
+                        <div className={styles.dexterity}>
+                            <div className={styles.dexterityNumber}>Dexterity: {this.props.character.dexterity}</div>
+                            <div className={styles.dexterityBonuses}></div>
+                        </div>
+
+                        <div className={styles.constitution}>
+                            <div className={styles.constitutionNumber}>Constitution: {this.props.character.constitution}</div>
+                            <div className={styles.constitutionBonuses}></div>
+                        </div>
+                        <div className={styles.intelligence}>
+                            <div className={styles.intelligenceNumber}>Intelligence: {this.props.character.intelligence}</div>
+                            <div className={styles.intelligenceBonuses}></div>
+                        </div>
+
+                        <div className={styles.wisdom}>
+                            <div className={styles.wisdomNumber}>Wisdom: {this.props.character.wisdom}</div>
+                            <div className={styles.wisdomBonuses}></div>
+                        </div>
+                        <div className={styles.charisma}>
+                            <div className={styles.charismaNumber}>Charisma: {this.props.character.charisma}</div>
+                            <div className={styles.charismaBonuses}></div>
+                        </div>
+                        <div className={styles.passiveWisdom}>Passive Wisdom: -</div>
                     </div>
 
-                    <div className={styles.constitution}>
-                        <div className={styles.constitutionNumber}></div>
-                        <div className={styles.constitutionBonuses}></div>
-                    </div>
-                    <div className={styles.intelligence}>
-                        <div className={styles.intelligenceNumber}></div>
-                        <div className={styles.intelligenceBonuses}></div>
-                    </div>
-
-                    <div className={styles.wisdom}>
-                        <div className={styles.wisdomNumber}></div>
-                        <div className={styles.wisdomBonuses}></div>
-                    </div>
-                    <div className={styles.charisma}>
-                        <div className={styles.charismaNumber}></div>
-                        <div className={styles.charismaBonuses}></div>
-                    </div>
-                    <div className={styles.passiveWisdom}></div>
-                </div>
-
-                <div className={styles.rightContainer}>
-                    <div className={styles.rightContainer_topContainer}>
-                        <div className={styles.armorContainer}>
-                            <div className={styles.armorClass}></div>
-                            <div className={styles.dexterityModifier}></div>
-                            <div className={styles.armor}></div>
-                            <div className={styles.shield}></div>
-                            <div className={styles.misc}></div>
-                        </div>
-                        <div className={styles.initiative}></div>
-                        <div className={styles.speed}></div>
-                    </div>
-                    <div className={styles.rightContainer_leftContainer}>
-                        <div className={styles.hitPointsContainer}>
-                            <div className={styles.currentHitPoints}></div>
-                            <div className={styles.hitDice}></div>
-                        </div>
-                        <div className={styles.spellcastingContainer}>
-                            <div className={styles.spellcastingAbility}></div>
-                            <div className={styles.spellSaveDC}></div>
-                            <div className={styles.spellAttackBonus}></div>
-                        </div>
-                        <div className={styles.attacksContainer}>
-                            <div className={styles.attackContainer}>
-                                <div className={styles.weapon}></div>
-                                <div className={styles.type}></div>
-                                <div className={styles.attackBonus}></div>
-                                <div className={styles.attackDamage}></div>
+                    <div className={styles.bottomContainer_rightContainer}>
+                        <div className={styles.armorInitiativeAndSpeedContainer}>
+                            <div className={styles.armorContainer}>
+                                <div className={styles.armorClass}>Armor Class: {this.props.character.armorClass}</div>
+                                <div className={styles.dexterityModifier}>Dex Modifier: -</div>
+                                <div className={styles.armor}>Armor: -</div>
+                                <div className={styles.shield}>Shield: -</div>
+                                <div className={styles.misc}>Misc: -</div>
                             </div>
+                            <div className={styles.initiative}>Initiative: {this.props.character.initiative}</div>
+                            <div className={styles.speed}>Speed: {this.props.character.speed}</div>
                         </div>
-                    </div>
-                    <div className={styles.rightContainer_rightContainer}>
-                        <div className={styles.inventoryContainer}>
-                            <div className={styles.item}></div>
+                        <div className={styles.hitPointsAndInventoryContainer}>
+                            <div className={styles.hitPointsAndAttacksContainer}>
+                                <div className={styles.hitPointsContainer}>
+                                    <div className={styles.maxHitPoints}>Max Hit Points: {this.props.character.maxHitPoints}</div>
+                                    <div className={styles.currentHitPoints}>Current Hit Points: {this.props.character.currentHitPoints}</div>
+                                    <div className={styles.temporaryHitPoints}>Temporary Hit Points: {this.props.character.temporaryHitPoints}</div>
+                                </div>
+                                <div className={styles.spellcastingContainer}>
+                                    <div className={styles.spellcastingAbility}>Spellcasting Ability: -</div>
+                                    <div className={styles.spellSaveDC}>Spell Save DC: -</div>
+                                    <div className={styles.spellAttackBonus}>Spell Attack Bonus: -</div>
+                                </div>
+                                <div className={styles.attacksContainer}>
+                                    <div className={styles.attackContainer}>
+                                        <div className={styles.weapon}>Weapon: -</div>
+                                        <div className={styles.type}>Type: -</div>
+                                        <div className={styles.attackBonus}>Attack Bonus: -</div>
+                                        <div className={styles.attackDamage}>Attack Damage: -</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={styles.inventoryContainer}>
+                                <div className={styles.item}>Item</div>
+                                <div className={styles.item}>Item</div>
+                                <div className={styles.item}>Item</div>
+                                <div className={styles.item}>Item</div>
+                                <div className={styles.item}>Item</div>
+                                <div className={styles.item}>Item</div>
+                                <div className={styles.item}>Item</div>
+                            </div>
                         </div>
                     </div>
                 </div>

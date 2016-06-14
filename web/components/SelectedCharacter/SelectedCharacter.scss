@@ -1,4 +1,78 @@
 .container {
 	display: flex;
+	flex-direction: column;
 	flex: 1 1 auto;
 }
+
+.nameContainer {
+	display: flex;
+	justify-content: space-around;
+	padding-bottom: 40px;
+}
+
+.atAGlanceContainer {
+	display: flex;
+	flex-direction: column;
+	width: 500px;
+}
+
+.classLine,
+.raceLine {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.bottomContainer {
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: space-around;
+}
+
+.attributesContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.bottomContainer_rightContainer {
+	display: flex;
+	flex-direction: column;
+	width: 700px;
+}
+
+.armorInitiativeAndSpeedContainer {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 25px
+}
+
+.armorContainer {
+	display: flex;
+}
+
+.hitPointsAndInventoryContainer {
+	display: flex;
+	justify-content: space-between;
+}
+
+.hitPointsAndAttacksContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.hitPointsContainer {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 15px;
+}
+
+.spellcastingContainer,
+.attacksContainer {
+	display: flex;
+	padding-bottom: 15px;
+}
+
+.attackContainer {
+	display: flex;
+}
+

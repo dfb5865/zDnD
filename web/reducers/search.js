@@ -8,46 +8,43 @@ let thann =
 {
     id: 1,
     name: 'Thann',
-    race: 'Dwarf',
+    playerName: 'Dave',
     alignment: 'Lawful Good',
+
+    race: 'Dwarf',
     subRace: 'Hill Dwarf',
+
     class: 'Cleric',
     subClass: 'Life Domain',
+
     level: 2,
-    currentHealth: 14,
-    totalHealth: 14,
+    experience: 768,
+
     armorClass: 18,
+    initiative: 20,
     speed: 25,
+
+    currentHitPoints: 14,
+    maxHitPoints: 14,
+    temporaryHitPoints: 0,
+
     proficiencyBonus: 2,
+    strength: 14,
+    dexterity: 8,
+    constitution: 15,
+    intelligence: 10,
+    wisdom: 16,
+    charisma: 12,
+
     proficiencies: [
     ],
-    armorType: 'Chain Mail',
-    equipedWeapons: [
+    attacks: [
     ],
-    spellSlots: 3,
-    equipedSpells: [
-    ],
-    availableSpells: [
+    spells: [
     ],
     cantrips: [
     ],
-    strength: 14,
-    strengthBonus: 2,
-    dexterity: 8,
-    dexterityBonus: -1,
-    constiution: 15,
-    constiutionBonus: 2,
-    intellect: 10,
-    intellectBonus: 0,
-    wisdom: 16,
-    wisdomBonus: 3,
-    charisma: 12,
-    charismaBonus: 1,
     inventory: [
-    ],
-    racialAbilities: [
-    ],
-    classAbilities: [
     ]
 };
 
@@ -55,16 +52,44 @@ let grimmer =
 {
     id: 2,
     name: 'Grimmer',
+    playerName: 'Jared',
+    alignment: 'Chaotic Good',
+
     race: 'Orc',
-    alignment: 'Lawful Neutral',
     subRace: 'Half Orc',
+
     class: 'Paladin',
-    subClass: 'Healer',
+    subClass: 'Lightbringer',
+
     level: 2,
-    currentHealth: 18,
-    totalHealth: 18,
-    armorClass: 20,
-    speed: 25
+    experience: 867,
+
+    armorClass: 15,
+    initiative: 2,
+    speed: 25,
+
+    currentHitPoints: 19,
+    maxHitPoints: 20,
+    temporaryHitPoints: 1,
+
+    proficiencyBonus: 1,
+    strength: 13,
+    dexterity: 10,
+    constitution: 16,
+    intelligence: 9,
+    wisdom: 9,
+    charisma: 15,
+
+    proficiencies: [
+    ],
+    attacks: [
+    ],
+    spells: [
+    ],
+    cantrips: [
+    ],
+    inventory: [
+    ]
 };
 
 export default function reducer(state = initialState, action) {
