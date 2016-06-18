@@ -16,14 +16,6 @@ import AddPartyMemberTile from '../../components/AddPartyMemberTile';
             );
         }.bind(this));
 
-        if (rows.length === 0) {
-            return (
-                <div className={styles.container}>
-                    <AddPartyMemberTile characterSearch={this.props.characterSearch}/>
-                </div>
-            );
-        }
-
         return (
             <div className={styles.container}>
                 {rows}
